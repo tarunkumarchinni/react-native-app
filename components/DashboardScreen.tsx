@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import CardComponent from './CardComponent'
 const DashboardScreen: React.FC = (props:any) => {
     const navigation = useNavigation();
-    const [user, setUser] = React.useState<string | null>("Tarun Kumar");
+    const [user, setUser] = React.useState<string | null>("Marco");
     return(
         <>
         <ScrollView contentContainerStyle={{}}>
