@@ -11,7 +11,7 @@ const WelcomeScreen: React.FC = (props:any) => {
     return(
         <SafeAreaView className="flex-1" style={{backgroundColor: "#6a5acd" }}>
             <View className="flex-1 flex justify-around my-4">
-                <Text className="text-white font-bold text-4xl text-center">Let's Get Stated!</Text>
+                <Text className="text-white font-bold text-4xl text-center">Let's Get Started!</Text>
                 <View className="flex-row justify-center">
                     <Image source={require("../assets/expense-tracker-app.png")} style={{width:350,height:350}}/>
                 </View>
