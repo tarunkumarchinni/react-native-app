@@ -1,7 +1,8 @@
 import React,{ useState } from 'react'
-import {View, Text, FlatList, ScrollView, Image, Pressable } from 'react-native'
+import {View, Text, FlatList, Image, Pressable } from 'react-native'
 import { UserIcon, ArrowLeftIcon, ChartBarIcon } from 'react-native-heroicons/solid';
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { ScrollView } from 'react-native-virtualized-view'
 import DashboardCard from './DashboardCard'
 import EntityCard from './EntityCard'
 import { useNavigation } from '@react-navigation/native'
@@ -11,7 +12,7 @@ const DashboardScreen: React.FC = (props:any) => {
     const [user, setUser] = React.useState<string | null>("Marco");
     return(
         <>
-        <ScrollView contentContainerStyle={{}}>
+        <ScrollView>
         <SafeAreaView  className="rounded-3xl" style={{backgroundColor: "#6a5acd" }}> 
         {/* #FF7700 */}
             <View className="h-[30px] z-20 flex flex-row justify-between items-center px-2">
@@ -41,6 +42,9 @@ const DashboardScreen: React.FC = (props:any) => {
                 numColumns={2}
                 renderItem={({ item }) => <Card cardName={item.cardName} imageUrl={item.imageUrl} totalAmount={item.totalAmount}/>}
             />
+            {/* {
+                cardsData?.map((item)=> <Card key={item.id} cardName={item.cardName} imageUrl={item.imageUrl} totalAmount={item.totalAmount}/>)
+            } */}
             {/* </View>         
         </View> */}
         </ScrollView>
