@@ -7,6 +7,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import LoginScreen from './components/LoginScreen';
 import SignUpScreen from './components/SignUpScreen';
 import DashboardScreen from './components/DashboardScreen';
+import SplashScreen from './components/SplashScreen';
 import { TailwindProvider } from 'tailwindcss-react-native';
 const Stack = createNativeStackNavigator();
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
            <Stack.Screen name="Login" options={{headerShown: false}} component={LoginScreen} />
            <Stack.Screen name="SignUp" options={{headerShown: false}} component={SignUpScreen} />
            <Stack.Screen name="Dashboard" options={{headerShown: false}} component={DashboardScreen} />
+           <Stack.Screen name="Splash" options={{headerShown: false}} component={SplashScreen} />
          </Stack.Navigator>
        </NavigationContainer>
         {/* <LoginScreen/> */}
