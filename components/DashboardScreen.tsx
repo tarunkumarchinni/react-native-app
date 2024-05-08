@@ -4,6 +4,7 @@ import { UserIcon, ArrowLeftIcon, ChartBarIcon } from 'react-native-heroicons/so
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-virtualized-view'
 import DashboardCard from './DashboardCard'
+import MyFlatList from './HorizontalCards'
 import EntityCard from './EntityCard'
 import { useNavigation } from '@react-navigation/native'
 import CardComponent from './CardComponent'
@@ -12,7 +13,7 @@ const DashboardScreen: React.FC = (props:any) => {
     const [user, setUser] = React.useState<string | null>("Marco");
     return(
         <>
-        <ScrollView>
+        <ScrollView style={{backgroundColor: "white" }}>
         <SafeAreaView  className="rounded-3xl" style={{backgroundColor: "#6a5acd" }}> 
         {/* #FF7700 */}
             <View className="h-[30px] z-20 flex flex-row justify-between items-center px-2">
@@ -36,12 +37,17 @@ const DashboardScreen: React.FC = (props:any) => {
         </SafeAreaView>
         {/* <View className="flex items-center justify-center">
             <View className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4"> */}
-            <FlatList
+            {/* <FlatList
+                horizontal={true}
                 data={cardsData}
                 keyExtractor={(item) => item.id}
-                numColumns={2}
+                // numColumns={2}
+                showsHorizontalScrollIndicator = {false}
+                stickyHeaderHiddenOnScroll ={true}
+                ListHeaderComponent={<Text>{"test"}</Text>}
                 renderItem={({ item }) => <Card cardName={item.cardName} imageUrl={item.imageUrl} totalAmount={item.totalAmount}/>}
-            />
+            /> */}
+            <MyFlatList />
             {/* {
                 cardsData?.map((item)=> <Card key={item.id} cardName={item.cardName} imageUrl={item.imageUrl} totalAmount={item.totalAmount}/>)
             } */}
